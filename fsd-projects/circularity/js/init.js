@@ -31,12 +31,12 @@ view.addChild(circle);
 circles.push(circle);
 }
         // TODO 3 : Call the drawCircle() function
-drawCircle()
+
 
         // TODO 7 : Use a loop to create multiple circles
 for (var i = 0; i < 50; i++) {
- 
-}
+            drawCircle();
+        }
 
 
 
@@ -51,11 +51,7 @@ for (var i = 0; i < 50; i++) {
         */
         function update() {
             // TODO 4 : Update the position of each circle using physikz.updatePosition()
-physikz.updatePosition(
-circles[0,1,2]);
 
-
-);
             
             // TODO 5 : Call game.checkCirclePosition() on your circles
            game.checkCirclePosition(/* bracket notation to access the first circle */);
@@ -66,15 +62,12 @@ game.checkCirclePosition(circles[3]);
 game.checkCirclePosition(circles[4]);
 
             // TODO 8 / TODO 9 : Iterate over the array
-           physikz.updatePosition
-            for (let i = 0; i < circles.length; i++){
-                physikz.updatePosition(circles[i])
-            }
-            game.checkCirclePosition{
-                circles[i]
-            }
+        for (var i = 0; i < circles.length; i++) {
+            physikz.updatePosition(circles[i]);
+            game.checkCirclePosition(circles[i]);
+           }
         }
-    
+
         /* 
         This Function should check the position of a circle that is passed to the 
         Function. If that circle drifts off the screen, this Function should move
@@ -88,9 +81,15 @@ game.checkCirclePosition(circles[4]);
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-             if circle.x = 100;
-             if circle.y = 0;
-             if circle.radius = 100;
+             if (circle.x < 0) {
+                circle.x = canvas.width;
+            }
+            if (circle.y < 0) {
+                circle.y = canvas.height;
+            }
+            if (circle.y > canvas.height) {
+                circle.y = 0
+            }
 
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
